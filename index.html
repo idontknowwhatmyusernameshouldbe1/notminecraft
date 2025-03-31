@@ -25,6 +25,12 @@
     </div>
   </div>
 
+    <div id="loading-screen" style="display: none; margin-top: 40px;">
+        <h2>💡 Generating terrain...</h2>
+        <p style="font-size: 20px;">⛏️ Loading world chunks...</p>
+    </div>
+  
+
   <div id="scratch-game">
     <h2>🎮 BlockCraft: Scratch Edition</h2>
     <iframe src="https://scratch.mit.edu/projects/10128407/embed" allowtransparency="true"
@@ -36,17 +42,19 @@
 
   <script>
     function launchMinecraft() {
-      // Hide the Play button
+      // Hide the main menu
       document.getElementById("main-content").style.display = "none";
-      // Show fake loading screen
+  
+      // Show the fake loading screen
       document.getElementById("loading-screen").style.display = "block";
-      
+  
       // After 3 seconds, try to launch Minecraft
       setTimeout(() => {
         window.location.href = "minecraft://";
       }, 3000);
     }
   </script>
+  
 
 </body>
 </html>
