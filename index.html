@@ -36,50 +36,15 @@
 
   <script>
     function launchMinecraft() {
-       document.getElementById("main-content").style.display = "none";
-       document.getElementById("loading-screen").innerHTML = `
-         <h2>💡 Generating terrain...</h2>
-         <p style="font-size: 20px;">⛏️ Loading world chunks...</p>
-       `;
-       document.getElementById("loading-screen").style.display = "block";
- 
-       setTimeout(() => {
-         window.location.href = "minecraft://";
-         setTimeout(() => {
-           document.getElementById("main-content").style.display = "block";
-           document.getElementById("loading-screen").style.display = "none";
-         }, 1000);
-       }, 3000);
-     }
- 
-     function launchHive() {
-       document.getElementById("main-content").style.display = "none";
-       document.getElementById("loading-screen").innerHTML = `
-         <h2>🌐 Connecting to Multiplayer...</h2>
-         <p style="font-size: 20px;">🐝 Joining The Hive server</p>
-       `;
-       document.getElementById("loading-screen").style.display = "block";
- 
-       setTimeout(() => {
-         window.location.href = "minecraft://?addExternalServer=The%20Hive|geo.hivebedrock.network:19132";
-         setTimeout(() => {
-           document.getElementById("main-content").style.display = "block";
-           document.getElementById("loading-screen").style.display = "none";
-         }, 1000);
-       }, 3000);
-     }
-    function playOurVersion() {
-        document.getElementById("main-content").style.display = "none";
-    }
-    
-    function playScratch() {
+      // Hide the Play button
       document.getElementById("main-content").style.display = "none";
-      document.getElementById("scratch-game").style.display = "block";
-    }
-
-    function goBack() {
-      document.getElementById("scratch-game").style.display = "none";
-      document.getElementById("main-content").style.display = "block";
+      // Show fake loading screen
+      document.getElementById("loading-screen").style.display = "block";
+      
+      // After 3 seconds, try to launch Minecraft
+      setTimeout(() => {
+        window.location.href = "minecraft://";
+      }, 3000);
     }
   </script>
 
