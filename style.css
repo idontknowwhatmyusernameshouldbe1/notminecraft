@@ -1,0 +1,69 @@
+body {
+    background-color: #7ec850;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header {
+    background-color: #5a7d39;
+    padding: 20px;
+    box-shadow: 0 4px #40602a;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px #000;
+  }
+
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin: 15px 10px 0;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px #2f582f;
+  }
+
+  .button:hover {
+    background-color: #45a049;
+  }
+
+  .fake-game, .fake-mc {
+    margin-top: 40px;
+    font-size: 24px;
+    color: #222;
+  }
+
+  .dirt-block {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: url('https://i.imgur.com/2G7r5Kd.png') no-repeat center/cover;
+    margin: 10px;
+  }
+
+  #loading-screen, #blockcraft-fake {
+    display: none;
+    margin-top: 50px;
+    font-size: 24px;
+  }
+
+  .blocky {
+    font-family: 'Courier New', monospace;
+    font-size: 30px;
+    color: #444;
+  }
+
+  .back-button {
+    margin-top: 30px;
+    font-size: 16px;
+    background-color: #333;
+  }
