@@ -5,74 +5,112 @@
   <title>BlockCraft - Totally Real Minecraft</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* --- Logo Styling --- */
-    .logo {
+    /* --- Body & Background --- */
+    body {
+        background: linear-gradient(to bottom, #01f6d1, #00c4a7);
+        font-family: 'Courier New', monospace;
         text-align: center;
-        margin: 30px 0;
+        color: white;
+        margin: 0;
+        padding: 0;
     }
 
-    .logo img {
-        width: 400px;      /* adjust size as needed */
-        max-width: 90%;    /* responsive on smaller screens */
-        height: auto;
+    /* --- Header with Logo --- */
+    .header {
+        background: linear-gradient(#5a7d39, #40602a);
+        padding: 10px 20px;
+        box-shadow: 0 4px #2f582f;
+        border-bottom: 2px solid #2f582f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-logo {
+        height: 60px; /* adjust size */
+        width: auto;
     }
 
     /* --- Buttons --- */
     .button {
-        display: inline-block;
-        padding: 10px 20px;
-        margin: 10px;
-        font-size: 18px;
-        font-weight: bold;
-        color: #fff;
-        background-color: #228B22;
+        background: linear-gradient(#4CAF50, #2f582f);
         border: none;
-        border-radius: 6px;
+        color: white;
+        padding: 15px 30px;
+        margin: 15px 10px 0;
+        font-size: 20px;
         cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 4px #2f582f;
+        transition: all 0.2s;
     }
 
     .button:hover {
-        background-color: #32CD32;
+        background: linear-gradient(#45a049, #1f3d1f);
+        transform: translateY(-2px);
+        box-shadow: 0 6px #1f3d1f;
     }
 
     /* --- Fake Game Blocks --- */
-    .fake-game {
-        text-align: center;
-        margin-top: 30px;
+    .fake-game, .fake-mc {
+        margin-top: 40px;
+        font-size: 24px;
+        color: #222;
     }
 
     .dirt-block {
-        width: 50px;
-        height: 50px;
-        background-color: #8B4513;
         display: inline-block;
-        margin: 5px;
+        width: 100px;
+        height: 100px;
+        background: url('https://ih1.redbubble.net/image.5579983748.9887/fposter,small,wall_texture,square_product,600x600.jpg') no-repeat center/cover;
+        margin: 10px;
         border: 2px solid #654321;
+        box-shadow: inset 0 0 10px #000;
+        transition: transform 0.2s;
     }
 
-    /* --- Loading Screen --- */
-    #loading-screen {
-        text-align: center;
-        margin-top: 40px;
-        font-family: sans-serif;
+    .dirt-block:hover {
+        transform: translateY(-5px);
     }
 
-    /* --- Scratch Game --- */
-    #scratch-game {
-        text-align: center;
-        margin-top: 40px;
+    /* --- Loading Screen & Scratch Game --- */
+    #loading-screen, #scratch-game {
+        display: none;
+        margin-top: 50px;
+        font-size: 24px;
+        text-shadow: 1px 1px 0 #000;
+    }
+
+    /* --- Back Button --- */
+    .back-button {
+        margin-top: 30px;
+        font-size: 16px;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 3px #111;
+        transition: all 0.2s;
+    }
+
+    .back-button:hover {
+        background-color: #555;
+        transform: translateY(-2px);
+        box-shadow: 0 5px #111;
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo -->
-  <div class="logo">
-    <img src="logo.png" alt="BlockCraft Launcher Logo" />
+  <!-- Header with Logo -->
+  <div class="header">
+    <img src="logo.png" alt="BlockCraft Launcher Logo" class="header-logo">
   </div>
 
   <!-- Main Content -->
-  <div id="main-content" style="text-align:center;">
+  <div id="main-content">
     <button class="button" onclick="launchMinecraft()">Play</button>
     <button class="button" onclick="launchHive()">Multiplayer</button>
     <button class="button" onclick="playOurVersion()">Play Our Version</button>
@@ -86,19 +124,19 @@
   </div>
 
   <!-- Loading Screen -->
-  <div id="loading-screen" style="display: none;">
+  <div id="loading-screen">
       <h2>💡 Generating terrain...</h2>
-      <p style="font-size: 20px;">⛏️ Loading world chunks...</p>
+      <p>⛏️ Loading world chunks...</p>
   </div>
 
   <!-- Scratch Game -->
-  <div id="scratch-game" style="display:none;">
+  <div id="scratch-game">
     <h2>🎮 BlockCraft: Scratch Edition</h2>
     <iframe src="https://scratch.mit.edu/projects/10128407/embed" allowtransparency="true"
       width="485" height="402" frameborder="0" scrolling="no" allowfullscreen>
     </iframe>
     <br><br>
-    <button class="button" onclick="goBack()">Back to Main Menu</button>
+    <button class="back-button" onclick="goBack()">Back to Main Menu</button>
   </div>
 
   <!-- Scripts -->
