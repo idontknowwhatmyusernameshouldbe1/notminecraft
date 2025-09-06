@@ -1,6 +1,6 @@
 /* --- Body & Background --- */
 body {
-    background: linear-gradient(to bottom, #01f6d1, #00c4a7); /* nicer gradient */
+    background: linear-gradient(to bottom, #01f6d1, #00c4a7);
     font-family: 'Courier New', monospace;
     text-align: center;
     color: white;
@@ -8,20 +8,20 @@ body {
     padding: 0;
 }
 
-/* --- Header --- */
+/* --- Header with Logo --- */
 .header {
     background: linear-gradient(#5a7d39, #40602a);
-    padding: 20px;
+    padding: 10px 20px;
     box-shadow: 0 4px #2f582f;
     border-bottom: 2px solid #2f582f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* --- Header Title --- */
-h1 {
-    font-size: 48px;
-    margin: 0;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px #000;
+.header-logo {
+    height: 60px; /* adjust as needed */
+    width: auto;
 }
 
 /* --- Buttons --- */
@@ -66,19 +66,12 @@ h1 {
     transform: translateY(-5px);
 }
 
-/* --- Loading Screen & Other Panels --- */
-#loading-screen, #blockcraft-fake {
+/* --- Loading Screen & Scratch Game --- */
+#loading-screen, #scratch-game {
     display: none;
     margin-top: 50px;
     font-size: 24px;
     text-shadow: 1px 1px 0 #000;
-}
-
-/* --- Blocky Font Class --- */
-.blocky {
-    font-family: 'Courier New', monospace;
-    font-size: 30px;
-    color: #444;
 }
 
 /* --- Back Button --- */
@@ -99,4 +92,13 @@ h1 {
     background-color: #555;
     transform: translateY(-2px);
     box-shadow: 0 5px #111;
+}
+
+/* --- Headings & Text --- */
+h2 {
+    text-shadow: 1px 1px 0 #000;
+}
+
+p {
+    font-size: 18px;
 }
