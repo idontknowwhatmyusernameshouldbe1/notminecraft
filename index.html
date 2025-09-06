@@ -4,15 +4,75 @@
   <meta charset="UTF-8" />
   <title>BlockCraft - Totally Real Minecraft</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- Logo Styling --- */
+    .logo {
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .logo img {
+        width: 400px;      /* adjust size as needed */
+        max-width: 90%;    /* responsive on smaller screens */
+        height: auto;
+    }
+
+    /* --- Buttons --- */
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #228B22;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: #32CD32;
+    }
+
+    /* --- Fake Game Blocks --- */
+    .fake-game {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .dirt-block {
+        width: 50px;
+        height: 50px;
+        background-color: #8B4513;
+        display: inline-block;
+        margin: 5px;
+        border: 2px solid #654321;
+    }
+
+    /* --- Loading Screen --- */
+    #loading-screen {
+        text-align: center;
+        margin-top: 40px;
+        font-family: sans-serif;
+    }
+
+    /* --- Scratch Game --- */
+    #scratch-game {
+        text-align: center;
+        margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1>🟫 BlockCraft</h1>
-    <p>Definitely Not Minecraft™</p>
+  <!-- Logo -->
+  <div class="logo">
+    <img src="logo.png" alt="BlockCraft Launcher Logo" />
   </div>
 
-  <div id="main-content">
+  <!-- Main Content -->
+  <div id="main-content" style="text-align:center;">
     <button class="button" onclick="launchMinecraft()">Play</button>
     <button class="button" onclick="launchHive()">Multiplayer</button>
     <button class="button" onclick="playOurVersion()">Play Our Version</button>
@@ -25,13 +85,14 @@
     </div>
   </div>
 
-    <div id="loading-screen" style="display: none; margin-top: 40px;">
-        <h2>💡 Generating terrain...</h2>
-        <p style="font-size: 20px;">⛏️ Loading world chunks...</p>
-    </div>
-  
+  <!-- Loading Screen -->
+  <div id="loading-screen" style="display: none;">
+      <h2>💡 Generating terrain...</h2>
+      <p style="font-size: 20px;">⛏️ Loading world chunks...</p>
+  </div>
 
-  <div id="scratch-game">
+  <!-- Scratch Game -->
+  <div id="scratch-game" style="display:none;">
     <h2>🎮 BlockCraft: Scratch Edition</h2>
     <iframe src="https://scratch.mit.edu/projects/10128407/embed" allowtransparency="true"
       width="485" height="402" frameborder="0" scrolling="no" allowfullscreen>
@@ -40,21 +101,31 @@
     <button class="button" onclick="goBack()">Back to Main Menu</button>
   </div>
 
+  <!-- Scripts -->
   <script>
     function launchMinecraft() {
-      // Hide the main menu
       document.getElementById("main-content").style.display = "none";
-  
-      // Show the fake loading screen
       document.getElementById("loading-screen").style.display = "block";
-  
-      // After 3 seconds, try to launch Minecraft
+
       setTimeout(() => {
         window.location.href = "minecraft://";
       }, 3000);
     }
+
+    function launchHive() {
+      alert("Multiplayer not implemented yet!");
+    }
+
+    function playOurVersion() {
+      document.getElementById("main-content").style.display = "none";
+      document.getElementById("scratch-game").style.display = "block";
+    }
+
+    function goBack() {
+      document.getElementById("scratch-game").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }
   </script>
-  
 
 </body>
 </html>
