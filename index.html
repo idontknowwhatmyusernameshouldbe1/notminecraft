@@ -18,7 +18,8 @@
 
   <!-- Main Content -->
   <div id="main-content">
-    <button class="button" onclick="launchMinecraft()">Play</button>
+    <button class="button" onclick="launchMinecraft()">Play Bedrock</button>
+    <button class="button" onclick="launchJava()">Play Java 1.21.5</button>
     <button class="button" onclick="launchHive()">Multiplayer (Hive)</button>
     <button class="button" onclick="playOurVersion()">Play Our Version</button>
 
@@ -57,11 +58,19 @@
       }, 3000);
     }
 
+    function launchJava() {
+      // Attempt to launch Java Edition 1.21.5
+      window.location.href = "minecraft://";
+
+      setTimeout(() => {
+        alert("If nothing happened, make sure Minecraft Java Edition 1.21.5 is installed and selected in your launcher.");
+      }, 1500);
+    }
+
     function launchHive() {
       // Attempt to launch Hive server
       window.location.href = "minecraft://?addExternalServer=Hive&server=play.hivebedrock.network&port=19132";
 
-      // Fallback alert if nothing happens
       setTimeout(() => {
         alert("If nothing happened, your device might not support direct server launch. Open Minecraft and connect manually to play.hivebedrock.network:19132");
       }, 1500);
