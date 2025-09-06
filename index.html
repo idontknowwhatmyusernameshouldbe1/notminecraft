@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>BlockCraft - Totally Real Minecraft</title>
 
-  <!-- Favicon for real logo in browser tab / window title -->
+  <!-- Favicon for tab logo -->
   <link rel="icon" type="image/png" href="logo.png">
 
   <link rel="stylesheet" href="style.css">
@@ -19,7 +19,7 @@
   <!-- Main Content -->
   <div id="main-content">
     <button class="button" onclick="launchMinecraft()">Play</button>
-    <button class="button" onclick="launchHive()">Multiplayer</button>
+    <button class="button" onclick="launchHive()">Multiplayer (Hive)</button>
     <button class="button" onclick="playOurVersion()">Play Our Version</button>
 
     <div class="fake-game">
@@ -58,7 +58,13 @@
     }
 
     function launchHive() {
-      alert("Multiplayer not implemented yet!");
+      // Attempt to launch Hive server
+      window.location.href = "minecraft://?addExternalServer=Hive&server=play.hivebedrock.network&port=19132";
+
+      // Fallback alert if nothing happens
+      setTimeout(() => {
+        alert("If nothing happened, your device might not support direct server launch. Open Minecraft and connect manually to play.hivebedrock.network:19132");
+      }, 1500);
     }
 
     function playOurVersion() {
