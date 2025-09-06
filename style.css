@@ -8,20 +8,18 @@ body {
     padding: 0;
 }
 
-/* --- Header with Logo --- */
+/* --- Header --- */
 .header {
     background: linear-gradient(#5a7d39, #40602a);
-    padding: 10px 20px;
+    padding: 20px;
     box-shadow: 0 4px #2f582f;
     border-bottom: 2px solid #2f582f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.header-logo {
-    height: 60px; /* adjust as needed */
-    width: auto;
+.header h1 {
+    font-size: 36px;
+    margin: 0;
+    text-shadow: 2px 2px #000;
 }
 
 /* --- Buttons --- */
