@@ -18,7 +18,7 @@
 
   <!-- Main Content -->
   <div id="main-content">
-    <a href="roblox://">Open Roblox</a>
+    <button class="button" onclick="launchRoblox()">Play Roblox</button>
     <button class="button" onclick="launchMinecraft()">Play Bedrock</button>
     <button class="button" onclick="launchJava()">Play Java 1.21.5</button>
     <button class="button" onclick="launchHive()">Multiplayer (Hive)</button>
@@ -58,6 +58,9 @@
         window.location.href = "minecraft://";
       }, 3000);
     }
+    function launchRoblox() {
+      // Attempt to launch Java Edition 1.21.5
+      window.location.href = "roblox://";
 
     function launchJava() {
       // Attempt to launch Java Edition 1.21.5
